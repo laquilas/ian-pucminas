@@ -1,0 +1,19 @@
+{
+  "name": "ian-pucminas",
+  "version": "1.0.0",
+  "description": "Teste inicial da disciplina IAN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laquilas/ian-pucminas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laquilas/ian-pucminas/issues"
+  },
+  "homepage": "https://github.com/laquilas/ian-pucminas#readme"
+}
