@@ -10,16 +10,4 @@ jobs:
       - name: executa comando
         run: echo "Configuração inicial do pipeline"
 
-  CI:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: executa comando
-        run: echo "CI"
 
-  CD:
-    needs: CI
-    runs-on: ubuntu-latest
-    steps:
-      - name: executa comando
-        run: echo "CD"
