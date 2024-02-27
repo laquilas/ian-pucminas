@@ -1,42 +1,17 @@
-name: conchayoro-pipeline
-
+name: jobs examples
 on:
-  push:
-    branches: [ "main" ]
-
+  push
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: executa comando
-        run: echo "Configuração inicial do pipeline"
-        
-  CI1:
+    - name: step do job build
+      run: echo Hello, world! Build.
+      
+  deploy:
+    runs-on: ubuntu-latest
     needs: build
-    runs-on: ubuntu-latest
     steps:
-      - name: executa comando
-        run: echo "CI1"
-
-  CI2:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: executa comando
-        run: echo "CI2"
-
-  CD1:
-    needs: CI1
-    runs-on: ubuntu-latest
-    steps:
-      - name: executa comando
-        run: echo "CD1"
-
-  CD2:
-    needs: CI2
-    runs-on: ubuntu-latest
-    steps:
-      - name: executa comando
-        run: echo "CD1"
-
-
+    - name: step do deploy
+      run: echo Hello, world! Deploy.
