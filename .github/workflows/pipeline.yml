@@ -1,7 +1,8 @@
 name: conchayoro-pipeline
 
 on:
-  workflow_dispatch
+  push:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -9,5 +10,26 @@ jobs:
     steps:
       - name: executa comando
         run: echo "Configuração inicial do pipeline"
+        
+  CI1:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: executa comando
+        run: echo "CI1"
+
+  CI2:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: executa comando
+        run: echo "CI2"
+
+  CD:
+    needs: [CI1, CI2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: executa comando
+        run: echo "CD"
 
 
