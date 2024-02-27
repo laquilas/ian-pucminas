@@ -25,11 +25,18 @@ jobs:
       - name: executa comando
         run: echo "CI2"
 
-  CD:
-    needs: [CI1, CI2]
+  CD1:
+    needs: CI1
     runs-on: ubuntu-latest
     steps:
       - name: executa comando
-        run: echo "CD"
+        run: echo "CD1"
+
+  CD2:
+    needs: CI2
+    runs-on: ubuntu-latest
+    steps:
+      - name: executa comando
+        run: echo "CD1"
 
 
