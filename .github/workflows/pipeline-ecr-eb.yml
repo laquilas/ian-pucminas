@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: '16'
         cache: 'npm'
+    - run: echo "$MODULE_FULLNAME $MODULE_NAME"
     - run: docker build -t $MODULE_FULLNAME $MODULE_NAME
     - run: |
         docker tag $MODULE_FULLNAME:$TAG \
