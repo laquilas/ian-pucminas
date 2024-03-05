@@ -27,9 +27,8 @@ jobs:
         cache: 'npm'
     - run: echo "$MODULE_FULLNAME $MODULE_NAME"
     - run: docker build -t $MODULE_FULLNAME .
-    - run: |
-        docker tag $MODULE_FULLNAME:$TAG \
-        $REGISTRY_URL/$MODULE_FULLNAME:$TAG
+    - run: echo "$MODULE_FULLNAME:$TAG $MODULE_NAME $REGISTRY_URL/$MODULE_FULLNAME:$TAG"
+    - run: docker tag $MODULE_FULLNAME:$TAG $REGISTRY_URL/$MODULE_FULLNAME:$TAG
     - run: |
         aws ecr get-login-password --region $AWS_REGION | \
         docker login --username AWS --password-stdin $REGISTRY_URL
